@@ -24,19 +24,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: #ffff;
   animation: slide 1s ease-in-out;
 }
 
 .text {
-  font-size: 24px;
+  
   font-weight: bold;
   text-align: center;
-  color: #333;
+  color: #404040;
 }
 
 .author {
-  font-size: 18px;
+
   font-style: italic;
   text-align: center;
   color: #666;

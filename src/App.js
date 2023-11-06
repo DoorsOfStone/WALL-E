@@ -2,13 +2,13 @@ import "./App.css";
 import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Qoutes from "./components/Qoutes";
+import Quotes from "./components/Quotes";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Qoutes />
+      <Quotes />
       <Dashboard />
       <Footer />
     </div>
