@@ -1,12 +1,8 @@
 
+  @import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .carousel {
   width: 100%;
@@ -22,41 +18,58 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: #ffff;
   animation: slide 1s ease-in-out;
 }
 
 .text {
-  
+  font-family: 'Bacasime Antique', serif;
+  font-size: 48px;
   font-weight: bold;
   text-align: center;
   color: #404040;
 }
-
+.Header{
+  font-family: 'Silkscreen', sans-serif;
+}
 .author {
-
-  font-style: italic;
+  font-size: medium;
+  font-family: 'Great Vibes', cursive;
   text-align: center;
   color: #666;
 }
 
-@keyframes slide {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
+.animated {
+  -webkit-animation-duration: 20s;animation-duration: 20s;
+  -webkit-animation-fill-mode: both;animation-fill-mode: both;
 }
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+.fade-in-text{
+  
+  animation: fadeIn 10s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
 
 
