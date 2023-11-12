@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import Dashboard from "../components/Dashboard";
+import * as AiIcons from "react-icons/ai";
 import Navbar from "../components/Navbar";
+import FeedNavbar from "../components/FeedComponents/FeedNavbar";
 function Community() {
   const [posts, setPosts] = useState([
     {
@@ -176,11 +177,10 @@ function Community() {
   }
 
   return (
-    <div className="flex flex-col">
-      <Navbar />
-      <div className="flex flex-col">
-        <h1 className="text-2xl font-bold mb-4">Community Feed </h1>
-        <div className="grid grid-cols-3 gap-4">
+    <div className="flex flex-row justify-stretch">
+      <FeedNavbar />
+      <div className="main flex flex-col">
+        <div className="grid grid-row-3 justify-center gap-4 p-5">
           {posts.map((post) => (
             <div key={post.id} className="bg-white rounded-lg shadow p-4">
               <div className="flex items-center mb-4">
@@ -235,8 +235,14 @@ function Community() {
         {showModal && (
           <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
             <div className="bg-white rounded-lg shadow-lg p-4 w-full sm:w-1/2 lg:w-1/3">
-              <h2 className="text-lg font-bold mb-4">Leave a Comment</h2>
-              {/* <button onClick={handleModalClose()}>X</button> */}
+              <div className="w-full flex flex-row justify-between">
+                <h2 className="text-lg font-bold mb-4">Leave a Comment</h2>
+                <AiIcons.AiOutlineClose
+                  className="text-lg text-slate-300 hover:text-slate-400"
+                  onClick={handleModalClose}
+                />
+              </div>
+
               <form onSubmit={handleCommentSubmit}>
                 <div className="flex items-center mb-4">
                   <img

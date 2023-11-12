@@ -6,11 +6,15 @@ import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Quotes from "./components/Quotes";
+import Community from "./routes/Community";
+import Walle from "./routes/Walle";
+import Register from "./routes/Register";
+import Profile from "./routes/Profile";
 
 function App() {
-  const root = createRoot(document.getElementById("root"));
+  // const root = createRoot(document.getElementById("root"));
 
-  root.render(
+  return (
     <div className="App">
       <Navbar />
       <Quotes />
