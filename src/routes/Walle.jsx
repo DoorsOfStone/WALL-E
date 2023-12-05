@@ -2,12 +2,26 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import * as FiIcons from "react-icons/fi";
 import * as CiIcons from "react-icons/ci";
-
+import OpenAI from "openai";
 import "../App.css";
 
 function Walle() {
   let [postModal, setPostModal] = useState(false);
+  // prompt value
+  const [prompt, setPrompt] = useState("");
+  // modal function
+  const api_key = "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";
   const showPostModal = () => setPostModal(!postModal);
+  // const openai = new OpenAI({
+  //   `Authorization: Bearer $`,
+  // });
+  // const imageGen = async () => {
+  //   const image = await openai.images.generate({
+  //     model: "dall-e-3",
+  //     prompt: "3d render of a dog jumping over the moon",
+  //   });
+  //   console.log(image.data);
+  // };
 
   return (
     <div className="flex flex-col">

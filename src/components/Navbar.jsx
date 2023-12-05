@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const navigation = [
   { name: "Dashboard", path: "/", current: true },
   { name: "Try Now", path: "/Walle", current: false },
-  { name: "Create", path: "/Register", current: false },
   { name: "Community", path: "/Community", current: false },
 ];
 
@@ -15,6 +14,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const [loginStatus, setLogin] = useState(false);
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -89,7 +89,13 @@ export default function Navbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items
+                      className={
+                        setLogin
+                          ? "Log"
+                          : "absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      }
+                    >
                       <Menu.Item>
                         {({ active }) => (
                           <Link
